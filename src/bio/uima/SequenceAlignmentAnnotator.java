@@ -9,11 +9,12 @@ import bio.core.SequenceAligner;
 
 public class SequenceAlignmentAnnotator extends JCasAnnotator_ImplBase {
 
+   private final SequenceAligner sa = new SequenceAligner(-2, -2, 2, -1);
+
    @Override
    public void process(JCas cas) throws AnalysisEngineProcessException {
       try {
          String[] proteinSeqs = cas.getView(CasView.PROTEINS).getDocumentText().split(" ");
-         final SequenceAligner sa = new SequenceAligner(-2, -2, 2, -1); // TODO: Fix hard-coded alignment costs.
          StringBuilder alignments = new StringBuilder();
 
          for (String seq1 : proteinSeqs) {
