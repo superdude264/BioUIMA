@@ -11,9 +11,9 @@ import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.util.XMLInputSource;
 
-public class BioUima {
+public class BioUimaMain {
 
-   private static final String INPUT_FILE = "./data/dna.txt";
+   private static final String INPUT_FILE = "data/dna.txt";
 
    /**
     * The main entry point for the BioUIMA application.
